@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go语言方法 | 六松岛-福小林</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/img/favicon.ico">
+    <script charset="utf-8" src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-146891701-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-146891701-1');</script>
+    <script>var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?56eae8eec590ccaef1d5ff99d766f315";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+    <meta name="description" content="千里之行,始于足下">
+    <meta name="keywords" content="福小林,奔奔,ourLang,CentOS,Java,Golang,lsdCloud">
+    <link rel="preload" href="/assets/css/0.styles.caa9c7b4.css" as="style"><link rel="preload" href="/assets/js/app.128c6a8a.js" as="script"><link rel="preload" href="/assets/js/2.acc0748b.js" as="script"><link rel="preload" href="/assets/js/103.6aca5dfc.js" as="script"><link rel="preload" href="/assets/js/12.07cc01a2.js" as="script"><link rel="prefetch" href="/assets/js/10.69fcaf94.js"><link rel="prefetch" href="/assets/js/100.c278943d.js"><link rel="prefetch" href="/assets/js/101.3d0882d4.js"><link rel="prefetch" href="/assets/js/102.4aee0685.js"><link rel="prefetch" href="/assets/js/104.7501a6df.js"><link rel="prefetch" href="/assets/js/105.316add52.js"><link rel="prefetch" href="/assets/js/106.35f1ea46.js"><link rel="prefetch" href="/assets/js/107.8742fb2f.js"><link rel="prefetch" href="/assets/js/108.9f1f742c.js"><link rel="prefetch" href="/assets/js/109.b1f2ebcd.js"><link rel="prefetch" href="/assets/js/11.ea678d4a.js"><link rel="prefetch" href="/assets/js/110.d0a54aac.js"><link rel="prefetch" href="/assets/js/111.a71c2496.js"><link rel="prefetch" href="/assets/js/112.dbdb4edf.js"><link rel="prefetch" href="/assets/js/113.6db45239.js"><link rel="prefetch" href="/assets/js/114.338999c3.js"><link rel="prefetch" href="/assets/js/115.eb858829.js"><link rel="prefetch" href="/assets/js/116.2261b63c.js"><link rel="prefetch" href="/assets/js/117.e6f9bcc5.js"><link rel="prefetch" href="/assets/js/118.ddd278ed.js"><link rel="prefetch" href="/assets/js/119.51b93420.js"><link rel="prefetch" href="/assets/js/120.fe332beb.js"><link rel="prefetch" href="/assets/js/121.468eeb1f.js"><link rel="prefetch" href="/assets/js/122.8a748ac3.js"><link rel="prefetch" href="/assets/js/123.1a862077.js"><link rel="prefetch" href="/assets/js/124.7631fc8b.js"><link rel="prefetch" href="/assets/js/125.687656f7.js"><link rel="prefetch" href="/assets/js/126.db8997ed.js"><link rel="prefetch" href="/assets/js/127.350dbbf0.js"><link rel="prefetch" href="/assets/js/128.607d6156.js"><link rel="prefetch" href="/assets/js/129.d6d54944.js"><link rel="prefetch" href="/assets/js/13.ff54a500.js"><link rel="prefetch" href="/assets/js/130.2d622072.js"><link rel="prefetch" href="/assets/js/131.874c2f64.js"><link rel="prefetch" href="/assets/js/132.8c8c3fb3.js"><link rel="prefetch" href="/assets/js/133.8bdef3d3.js"><link rel="prefetch" href="/assets/js/134.30fa2613.js"><link rel="prefetch" href="/assets/js/135.b42cc198.js"><link rel="prefetch" href="/assets/js/136.2fa60af6.js"><link rel="prefetch" href="/assets/js/137.b8faf873.js"><link rel="prefetch" href="/assets/js/138.9eb44ed0.js"><link rel="prefetch" href="/assets/js/139.60205d85.js"><link rel="prefetch" href="/assets/js/14.8896860c.js"><link rel="prefetch" href="/assets/js/140.845b0fb5.js"><link rel="prefetch" href="/assets/js/141.8297339d.js"><link rel="prefetch" href="/assets/js/142.1520f2ab.js"><link rel="prefetch" href="/assets/js/143.ba0d61d8.js"><link rel="prefetch" href="/assets/js/144.3d171a45.js"><link rel="prefetch" href="/assets/js/145.0f070c5c.js"><link rel="prefetch" href="/assets/js/146.d9c06dc4.js"><link rel="prefetch" href="/assets/js/147.1ef6fde9.js"><link rel="prefetch" href="/assets/js/148.221d96bf.js"><link rel="prefetch" href="/assets/js/149.e0684087.js"><link rel="prefetch" href="/assets/js/15.92f08db1.js"><link rel="prefetch" href="/assets/js/150.af3a4a04.js"><link rel="prefetch" href="/assets/js/151.abcff079.js"><link rel="prefetch" href="/assets/js/152.1375edb4.js"><link rel="prefetch" href="/assets/js/153.f87c6226.js"><link rel="prefetch" href="/assets/js/154.0706fe82.js"><link rel="prefetch" href="/assets/js/155.fd1decab.js"><link rel="prefetch" href="/assets/js/16.6c8f44ef.js"><link rel="prefetch" href="/assets/js/17.298fa8ca.js"><link rel="prefetch" href="/assets/js/18.06cae4ee.js"><link rel="prefetch" href="/assets/js/19.fc87a8de.js"><link rel="prefetch" href="/assets/js/20.87681849.js"><link rel="prefetch" href="/assets/js/21.c071a85a.js"><link rel="prefetch" href="/assets/js/22.f7358e7b.js"><link rel="prefetch" href="/assets/js/23.aec5d9dd.js"><link rel="prefetch" href="/assets/js/24.1fb61300.js"><link rel="prefetch" href="/assets/js/25.c4e11f1b.js"><link rel="prefetch" href="/assets/js/26.49da89fd.js"><link rel="prefetch" href="/assets/js/27.4071066a.js"><link rel="prefetch" href="/assets/js/28.ce5acece.js"><link rel="prefetch" href="/assets/js/29.3732b1ce.js"><link rel="prefetch" href="/assets/js/3.8b61196a.js"><link rel="prefetch" href="/assets/js/30.80df970f.js"><link rel="prefetch" href="/assets/js/31.6b5621ed.js"><link rel="prefetch" href="/assets/js/32.d06de711.js"><link rel="prefetch" href="/assets/js/33.8e4a07d5.js"><link rel="prefetch" href="/assets/js/34.262679e8.js"><link rel="prefetch" href="/assets/js/35.336aea01.js"><link rel="prefetch" href="/assets/js/36.ba532d7a.js"><link rel="prefetch" href="/assets/js/37.9b8f4cf3.js"><link rel="prefetch" href="/assets/js/38.f7eada86.js"><link rel="prefetch" href="/assets/js/39.c1889836.js"><link rel="prefetch" href="/assets/js/4.dcf6c48b.js"><link rel="prefetch" href="/assets/js/40.fd7b8c93.js"><link rel="prefetch" href="/assets/js/41.aff40388.js"><link rel="prefetch" href="/assets/js/42.03bfa063.js"><link rel="prefetch" href="/assets/js/43.532f4589.js"><link rel="prefetch" href="/assets/js/44.cda12dc1.js"><link rel="prefetch" href="/assets/js/45.01c0a090.js"><link rel="prefetch" href="/assets/js/46.91cdc919.js"><link rel="prefetch" href="/assets/js/47.7fd8730d.js"><link rel="prefetch" href="/assets/js/48.0840d7e9.js"><link rel="prefetch" href="/assets/js/49.d52a050f.js"><link rel="prefetch" href="/assets/js/5.29ce2103.js"><link rel="prefetch" href="/assets/js/50.915a95b5.js"><link rel="prefetch" href="/assets/js/51.9570906d.js"><link rel="prefetch" href="/assets/js/52.7157c802.js"><link rel="prefetch" href="/assets/js/53.40f7d95c.js"><link rel="prefetch" href="/assets/js/54.16d2129d.js"><link rel="prefetch" href="/assets/js/55.1872f292.js"><link rel="prefetch" href="/assets/js/56.50ed1561.js"><link rel="prefetch" href="/assets/js/57.c0872507.js"><link rel="prefetch" href="/assets/js/58.d7b78f97.js"><link rel="prefetch" href="/assets/js/59.963dffcd.js"><link rel="prefetch" href="/assets/js/6.665c47d1.js"><link rel="prefetch" href="/assets/js/60.543c458e.js"><link rel="prefetch" href="/assets/js/61.b9f8846f.js"><link rel="prefetch" href="/assets/js/62.7e401ac0.js"><link rel="prefetch" href="/assets/js/63.f0762c72.js"><link rel="prefetch" href="/assets/js/64.31d86d7d.js"><link rel="prefetch" href="/assets/js/65.b2b982af.js"><link rel="prefetch" href="/assets/js/66.9099896f.js"><link rel="prefetch" href="/assets/js/67.1c572b3c.js"><link rel="prefetch" href="/assets/js/68.18252e68.js"><link rel="prefetch" href="/assets/js/69.8d332d85.js"><link rel="prefetch" href="/assets/js/7.00fd80a1.js"><link rel="prefetch" href="/assets/js/70.ae411075.js"><link rel="prefetch" href="/assets/js/71.f33cbf7f.js"><link rel="prefetch" href="/assets/js/72.b77bdb5a.js"><link rel="prefetch" href="/assets/js/73.c9e5cad7.js"><link rel="prefetch" href="/assets/js/74.93c37f96.js"><link rel="prefetch" href="/assets/js/75.2cb91dbb.js"><link rel="prefetch" href="/assets/js/76.5e67c7ec.js"><link rel="prefetch" href="/assets/js/77.00ab9691.js"><link rel="prefetch" href="/assets/js/78.a0a2475f.js"><link rel="prefetch" href="/assets/js/79.8d5492d1.js"><link rel="prefetch" href="/assets/js/8.7ed7005e.js"><link rel="prefetch" href="/assets/js/80.c5e1227e.js"><link rel="prefetch" href="/assets/js/81.ec7edb88.js"><link rel="prefetch" href="/assets/js/82.9c5eb99f.js"><link rel="prefetch" href="/assets/js/83.c7ccc87a.js"><link rel="prefetch" href="/assets/js/84.c1fe239e.js"><link rel="prefetch" href="/assets/js/85.72fd1ce6.js"><link rel="prefetch" href="/assets/js/86.bc2388f8.js"><link rel="prefetch" href="/assets/js/87.eb30231f.js"><link rel="prefetch" href="/assets/js/88.c812a82b.js"><link rel="prefetch" href="/assets/js/89.7c2ce5dd.js"><link rel="prefetch" href="/assets/js/9.557e8c6b.js"><link rel="prefetch" href="/assets/js/90.dc2ced56.js"><link rel="prefetch" href="/assets/js/91.e726bdf2.js"><link rel="prefetch" href="/assets/js/92.0d5d1048.js"><link rel="prefetch" href="/assets/js/93.8062369e.js"><link rel="prefetch" href="/assets/js/94.d0744ae1.js"><link rel="prefetch" href="/assets/js/95.1bcc85eb.js"><link rel="prefetch" href="/assets/js/96.2157b314.js"><link rel="prefetch" href="/assets/js/97.da3038c4.js"><link rel="prefetch" href="/assets/js/98.043c5801.js"><link rel="prefetch" href="/assets/js/99.0122954b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.caa9c7b4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">六松岛-福小林</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/study-guide/introduction.html" class="nav-link">
+  学习指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/introduction.html" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/go/introduction.html" class="nav-link">
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/sql/introduction.html" class="nav-link">
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="/fhir/introduction.html" class="nav-link">
+  FHIR
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/introduction.html" class="nav-link">
+  个人博客
+</a></div><div class="nav-item"><a href="/tool/developmentBox.html" class="nav-link">
+  开发百宝箱
+</a></div><div class="nav-item"><a href="/project/introduction.html" class="nav-link">
+  项目分享
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=180331730&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  其他合作
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://www.lsdcloud.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/ourlang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ourlang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://please.blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/linkExchanges/introduction.html" class="nav-link">
+  友情链接
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/study-guide/introduction.html" class="nav-link">
+  学习指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程语言" class="dropdown-title"><span class="title">编程语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/java/introduction.html" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/go/introduction.html" class="nav-link">
+  Go
+</a></li><li class="dropdown-item"><!----> <a href="/sql/introduction.html" class="nav-link">
+  SQL
+</a></li><li class="dropdown-item"><!----> <a href="/fhir/introduction.html" class="nav-link">
+  FHIR
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/introduction.html" class="nav-link">
+  个人博客
+</a></div><div class="nav-item"><a href="/tool/developmentBox.html" class="nav-link">
+  开发百宝箱
+</a></div><div class="nav-item"><a href="/project/introduction.html" class="nav-link">
+  项目分享
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="了解更多" class="dropdown-title"><span class="title">了解更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=180331730&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  其他合作
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="http://www.lsdcloud.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  个人网站
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/ourlang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/ourlang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://please.blog.csdn.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/linkExchanges/introduction.html" class="nav-link">
+  友情链接
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/go/introduction.html" class="sidebar-link">Go语言</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Go教程</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go/basic/build-go-env.html" class="sidebar-link">从零搭建Go语言开发环境</a></li><li><a href="/go/basic/helloworld.html" class="sidebar-link">第一个Go程序Hello World</a></li><li><a href="/go/basic/data-type.html" class="sidebar-link">Go语言数据类型</a></li><li><a href="/go/basic/variable.html" class="sidebar-link">Go语言变量</a></li><li><a href="/go/basic/constant.html" class="sidebar-link">Go语言常量</a></li><li><a href="/go/basic/operator.html" class="sidebar-link">Go语言运算符</a></li><li><a href="/go/basic/conditional.html" class="sidebar-link">Go语言条件语句</a></li><li><a href="/go/basic/repeat.html" class="sidebar-link">Go语言的循环语句</a></li><li><a href="/go/basic/array.html" class="sidebar-link">Go语言数组</a></li><li><a href="/go/basic/slices.html" class="sidebar-link">Go语言基础之切片</a></li><li><a href="/go/basic/map.html" class="sidebar-link">Go语言基础之map</a></li><li><a href="/go/basic/pointer.html" class="sidebar-link">Go语言指针</a></li><li><a href="/go/basic/function.html" class="sidebar-link">Go语言函数</a></li><li><a href="/go/basic/fmt.html" class="sidebar-link">fmt.Printf总结</a></li><li><a href="/go/basic/common-method.html" class="sidebar-link">Go常用方法总结</a></li><li><a href="/go/basic/struct.html" class="sidebar-link">Go语言结构体</a></li><li><a href="/go/basic/method.html" class="active sidebar-link">Go语言方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/basic/method.html#_1-方法的定义" class="sidebar-link">1 方法的定义</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/basic/method.html#_1-1-指针类型的接收者" class="sidebar-link">1.1 指针类型的接收者</a></li><li class="sidebar-sub-header"><a href="/go/basic/method.html#_1-2-值类型的接收者" class="sidebar-link">1.2 值类型的接收者</a></li><li class="sidebar-sub-header"><a href="/go/basic/method.html#_1-3-什么时候使用指针类型接收者" class="sidebar-link">1.3 什么时候使用指针类型接收者</a></li></ul></li><li class="sidebar-sub-header"><a href="/go/basic/method.html#_2-为什么有函数了还需要方法呢" class="sidebar-link">2 为什么有函数了还需要方法呢</a></li><li class="sidebar-sub-header"><a href="/go/basic/method.html#_3-任意类型添加方法" class="sidebar-link">3 任意类型添加方法</a></li><li class="sidebar-sub-header"><a href="/go/basic/method.html#_4-结构体的-继承" class="sidebar-link">4 结构体的“继承”</a></li></ul></li><li><a href="/go/basic/interface.html" class="sidebar-link">Go语言接口</a></li><li><a href="/go/basic/concurrent.html" class="sidebar-link">Go语言并发编程</a></li><li><a href="/go/basic/file.html" class="sidebar-link">Go语言文件操作</a></li><li><a href="/go/basic/test.html" class="sidebar-link">Go语言单元测试</a></li><li><a href="/go/basic/http.html" class="sidebar-link">Go语言之http</a></li><li><a href="/go/basic/reflect.html" class="sidebar-link">Go语言反射</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go Web框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go工具中间件</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="go语言方法"><a href="#go语言方法" class="header-anchor">#</a> Go语言方法</h1> <h2 id="_1-方法的定义"><a href="#_1-方法的定义" class="header-anchor">#</a> 1 方法的定义</h2> <blockquote><p>Go语言中的方法（<code>Method</code>）是一种作用于特定类型变量的函数。方法是与对象实例绑定的特殊函数。
+这种特定类型变量叫做接收者（<code>Receiver</code>）。接收者的概念就类似于其他语言中的<code>this</code>或者 <code>self</code>。</p></blockquote> <div class="custom-block tip"><p class="custom-block-title">方法定义语法</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>接收者变量 接收者类型<span class="token punctuation">)</span> 方法名<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span> <span class="token punctuation">(</span>返回参数<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//方法体</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>接收者变量：接收者中的参数变量名在命名时，官方建议使用接收者类型名的第一个小写字母，而不是self、this之类的命名。</li> <li>接收者类型：接收者类型和参数类似，可以是指针类型和非指针类型。</li> <li>方法名、参数列表、返回参数：具体格式与函数定义相同。</li></ul></div> <p>举例如下</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;fmt&quot;</span>
+
+<span class="token keyword">type</span> student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	name <span class="token builtin">string</span>
+	age  <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> dog <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	name <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>student<span class="token punctuation">)</span> <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s向大家问好\n&quot;</span><span class="token punctuation">,</span> s<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//声明一个变量stu</span>
+	<span class="token keyword">var</span> stu student
+	<span class="token comment">//变量赋值</span>
+	stu<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">&quot;福小林&quot;</span>
+	<span class="token comment">//调用student类型特定的方法say()</span>
+	stu<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	
+<span class="token comment">/*  var d dog
+	d.name=&quot;牧羊犬&quot;
+	//此处不能调用say(),报错d.say undefined (type dog has no field or method say)
+	d.say() */</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="_1-1-指针类型的接收者"><a href="#_1-1-指针类型的接收者" class="header-anchor">#</a> 1.1 指针类型的接收者</h3> <blockquote><p>指针类型的接收者由一个结构体的指针组成，由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。这种方式就十分接近于其他语言中面向对象中的this或者self。 例如我们为student添加一个SetAge方法，来修改实例变量的年龄。</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">//定义一个student的结构体</span>
+<span class="token keyword">type</span> student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	name <span class="token builtin">string</span>
+	age  <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s <span class="token operator">*</span>student<span class="token punctuation">)</span> <span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	s<span class="token punctuation">.</span>age<span class="token operator">++</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//声明一个变量stu</span>
+	<span class="token keyword">var</span> stu student
+	<span class="token comment">//变量赋值</span>
+	stu<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">&quot;张三&quot;</span>
+	stu<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">18</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;调用SetAge()方法之前%s的年龄%d\n&quot;</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>age<span class="token punctuation">)</span>  <span class="token comment">//18</span>
+	<span class="token comment">//调用student类型特定的方法调用SetAge()</span>
+	stu<span class="token punctuation">.</span><span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;调用调用SetAge()方法后%s的年龄%d\n&quot;</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>age<span class="token punctuation">)</span>  <span class="token comment">//19</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_1-2-值类型的接收者"><a href="#_1-2-值类型的接收者" class="header-anchor">#</a> 1.2 值类型的接收者</h3> <blockquote><p>当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code>
+<span class="token keyword">type</span> student <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	name <span class="token builtin">string</span>
+	age  <span class="token builtin">int</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>s student<span class="token punctuation">)</span> <span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	s<span class="token punctuation">.</span>age<span class="token operator">++</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//声明一个变量stu</span>
+	<span class="token keyword">var</span> stu student
+	<span class="token comment">//变量赋值</span>
+	stu<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">&quot;李四&quot;</span>
+	stu<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">30</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;调用SetAge()方法之前%s的年龄%d\n&quot;</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">//30</span>
+	<span class="token comment">//调用student类型特定的方法SetAge()</span>
+	stu<span class="token punctuation">.</span><span class="token function">SetAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;调用SetAge()方法后%s的年龄%d\n&quot;</span><span class="token punctuation">,</span>stu<span class="token punctuation">.</span>name<span class="token punctuation">,</span>stu<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">//30</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_1-3-什么时候使用指针类型接收者"><a href="#_1-3-什么时候使用指针类型接收者" class="header-anchor">#</a> 1.3 什么时候使用指针类型接收者</h3> <ul><li>需要修改接收者中的值</li> <li>接收者是拷贝代价比较大的大对象</li> <li>保证一致性，如果有某个方法使用了指针接收者，那么其他的方法也应该使用指针接收者。</li></ul> <h2 id="_2-为什么有函数了还需要方法呢"><a href="#_2-为什么有函数了还需要方法呢" class="header-anchor">#</a> 2 为什么有函数了还需要方法呢</h2> <div class="custom-block tip"><p class="custom-block-title">原因</p> <ul><li>Go不是纯粹的面向对象编程语言,而且Go不支持类.因此基于类型的方法是一种实现和类相似行为的途径</li> <li>相同的名字的方法可以定义在不同的类型上，而相同名字的函数是不被允许的。</li></ul></div> <h2 id="_3-任意类型添加方法"><a href="#_3-任意类型添加方法" class="header-anchor">#</a> 3 任意类型添加方法</h2> <blockquote><p>在Go语言中，接收者的类型可以是任何类型，不仅仅是结构体，任何类型都可以拥有方法。 举个例子，我们基于内置的int类型使用type关键字可以定义新的自定义类型，然后为我们的自定义类型添加方法</p></blockquote> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token comment">//MyInt 将int定义为自定义MyInt类型</span>
+<span class="token keyword">type</span> MyInt <span class="token builtin">int</span>
+
+<span class="token comment">//SayHello 为MyInt添加一个SayHello的方法</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>m MyInt<span class="token punctuation">)</span> <span class="token function">SayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello, 我是一个int。&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> m1 MyInt
+	m1<span class="token punctuation">.</span><span class="token function">SayHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//Hello, 我是一个int。</span>
+	m1 <span class="token operator">=</span> <span class="token number">100</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%#v  %T\n&quot;</span><span class="token punctuation">,</span> m1<span class="token punctuation">,</span> m1<span class="token punctuation">)</span> <span class="token comment">//100  main.MyInt</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><strong>注意:非本地类型不能定义方法，也就是说我们不能给别的包的类型定义方法。</strong></p> <h2 id="_4-结构体的-继承"><a href="#_4-结构体的-继承" class="header-anchor">#</a> 4 结构体的“继承”</h2> <blockquote><p>Go语言中使用结构体也可以模拟实现其他编程语言中面向对象的继承。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">package</span> main
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></blockquote> <p>import &quot;fmt&quot;</p> <p>//Animal 动物
+type Animal struct {
+name string
+}</p> <p>func (a Animal) move() {
+fmt.Printf(&quot;%s会动！\n&quot;, a.name)
+}</p> <p>//Dog 狗  Dog包裹了Animal 模拟继承了Animal<br>
+type Dog struct {
+Feet    int8
+Animal //Animal拥有的方法，Dog也拥有了，因为Dog包裹了Animal，通过嵌套匿名结构体模拟实现继承
+}</p> <p>func (d Dog) wang() {
+fmt.Printf(&quot;%s会汪汪汪~\n&quot;, d.name) // d.name相当于 d.Animal.name
+}</p> <p>func main() {
+d1 := Dog{
+Feet: 4,
+Animal: Animal{
+name: &quot;旺财&quot;,
+},
+}
+d1.wang() //旺财会汪汪汪~
+d1.move() //旺财会动！
+}</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> 
+## 函数和方法的区别
+::: danger 函数和方法的区别
+1、普通函数：接收者(函数参数)为值类型时，不能将指针类型的数据直接传递，反之亦然。
+​```go
+func function_name([parameter list]) [return_types] {
+/*函数体*/
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>2、方法(如struct方法)： 接收者为值类型时，可以直接用指针类型的变量调用方法，反之亦然。</p> <div class="language-go line-numbers-mode"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>variable_name variable_data_type<span class="token punctuation">)</span> <span class="token function">function_name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">[</span>return_type<span class="token punctuation">]</span><span class="token punctuation">{</span>
+   <span class="token comment">/* 方法体*/</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>:::</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <ul><li><p>方法与函数的区别是，函数不属于任何类型，方法属于特定的类型</p></li> <li><p>方法是与对象实例绑定的特殊函数。</p></li> <li><p>用于维护和展示对象自身的状态。对象是内敛的。普通函数则专注与算法流程，通过接受参数来完成特定的逻辑运算，并返回最终结果，方法是有关联状态的，函数通常是没有的。</p></li> <li><p>方法和函数定义语法区别在于前者实例接受参数，编译器以此确定方法所属的类型。在一些语言中尽管没有定义，但是函数使用了隐式的传递this实例参数。</p></li></ul></div> <div class="gitalk-container"><div id="gitalk-container"></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2020-10-26 23:08:07</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/go/basic/struct.html" class="prev">
+        Go语言结构体
+      </a></span> <span class="next"><a href="/go/basic/interface.html">
+        Go语言接口
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.128c6a8a.js" defer></script><script src="/assets/js/2.acc0748b.js" defer></script><script src="/assets/js/103.6aca5dfc.js" defer></script><script src="/assets/js/12.07cc01a2.js" defer></script>
+  </body>
+</html>
